@@ -1,0 +1,22 @@
+def make_salt():
+    # Your code here
+    salt_string = ""
+    for x in range(5):
+        salt_string += random.choice(string.ascii_letters)
+
+    return salt_string
+
+
+def make_cookie_hash(s, salt=None):
+    # Your code here
+
+    salt_cookie = make_salt()
+
+    hashed_cookie = hashlib.sha256(s).hexdigest()
+
+    return "%s,%s"%(hashed_cookie, salt_cookie)
+
+
+def valid_cookie(s, h):
+    salt = h.split(',')[1]
+    return h == make_cookie_hash(s)

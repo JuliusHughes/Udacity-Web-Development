@@ -1,0 +1,5 @@
+	('/blog', MainPage),
+    ('/blog/newpost', NewPost),
+    ('/blog/([0-9]+)', Permalink),
+    ('/blog.json', MainJSONPage),
+    ('/blog/([0-9]+.json)', PermalinkJSON)
